@@ -31,6 +31,19 @@ li {
   position: absolute;
   top: 10px;
   left: 400px;
-  right: 0;
-  border-radius: 5px;
+  right: 0px;
+}
+.box {
+  border-radius: 10px;
+  border: solid;
+  left: 450px;
+  min-height: 120px;
+  padding: 8px;
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  max-width: 270px;
+}
+ul {
+  padding: 0;
 }
