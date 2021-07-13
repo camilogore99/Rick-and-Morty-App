@@ -25,6 +25,7 @@ const LocationContainer = () => {
          fetch( url )
                .then( (res) => res.json() )
                .then( (data) => {
+                  
                   if (data.results === undefined) {
                     setFlagError(true)
                   }else {
@@ -32,10 +33,11 @@ const LocationContainer = () => {
                      setTypeLocation( data.results[0].type )
                      setDimension( data.results[0].dimension )
                      setNumResidents( data.results[0].residents.length )
-                    setResidents(data.results[0].residents.slice(0, 10))
+                    setResidents(data.results[0].residents.slice(0, 6))
                   }
                })
       } else {
+
          fetch( `https://rickandmortyapi.com/api/location/${Math.round(num(1,109))}` )
                .then( (res) => res.json() )
                .then( (data) => {
@@ -43,17 +45,17 @@ const LocationContainer = () => {
                   setTypeLocation( data.type )
                   setDimension( data.dimension )
                   setNumResidents( data.residents.length )
-                  setResidents(data.residents.slice(0, 10));
+                  setResidents(data.residents.slice(0, 6));
                } )
       }
-   }, [valueInput])
+   }, [valueInput, ])
 
    const list = residents.map(( value, index ) => {
       return <ResidentContainer  url={value} key={index} />
    })
 
    return (
-      <div className="container mt-5">
+      <>
          <div className="row">
             <div className="card-info">
                <div className="box">
@@ -67,16 +69,16 @@ const LocationContainer = () => {
          </div>
          <div>
             <h1>Rick and Morty App</h1>
-            <div className="row mt-3">
+            <div className="row mt-4">
                <SearchBox setvalueInput={setvalueInput} />
             </div>
-            <div className=" mt-5 container-cards">
+            <div className="container-cards">
                <div className="row">
                   {flagError ? <Error ubication={valueInput} />  : list }
                </div>
             </div>
          </div>
-      </div>
+      </>
    )
 }
 
