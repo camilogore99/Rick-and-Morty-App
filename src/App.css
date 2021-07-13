@@ -16,6 +16,7 @@ li {
 .column {
   display: flex;
   justify-content: center;
+  margin: 5px;
 }
 .row {
   display: flex;
@@ -23,7 +24,7 @@ li {
 }
 
 .card {
-  background-color: rgb(197, 102, 65);
+  background-color: rgba(31, 156, 98, 0.493);
 }
 .container-cards {
   background-color: cornsilk;
@@ -32,11 +33,11 @@ li {
   margin-top: 75px;
 }
 .card-info {
-  position: absolute;
-  top: 10px;
-  left: 400px;
-  right: 0px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
+
 .buttons-pages {
   padding: 2px;
   display: flex;
@@ -49,9 +50,6 @@ li {
   left: 450px;
   min-height: 120px;
   padding: 8px;
-  position: absolute;
-  right: 0px;
-  top: 5px;
   max-width: 270px;
 }
 ul {

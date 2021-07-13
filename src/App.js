@@ -4,7 +4,7 @@ import LocationContainer from './components/LocationContainer';
 function App() {
 
    return (
-      <div className="App">
+      <div className="">
          <LocationContainer />
       </div>
    );
