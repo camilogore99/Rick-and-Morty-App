@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const LocationInfo = ({ name, type, dimension, cantResident }) => {
    return (
@@ -10,7 +10,7 @@ const LocationInfo = ({ name, type, dimension, cantResident }) => {
          <li>Residents: { cantResident }</li>
       </ul>
       </>
-   )
-}
+   );
+};
 
-export default LocationInfo
+export default LocationInfo;

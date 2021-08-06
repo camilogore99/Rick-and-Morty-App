@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 const SearchBox = ( { setvalueInput } ) => {
-
-   const [valueInput, setValueInput] = useState('')
+   // estado del input 
+   const [valueInput, setValueInput] = useState('');
    
    return (
       <div>
@@ -11,9 +11,9 @@ const SearchBox = ( { setvalueInput } ) => {
            value={valueInput}
            onChange={(e) => setValueInput(e.target.value ) }
          />
-         <button onClick={ () => setvalueInput(valueInput) } >Search</button>
+         <button className="btn btn-danger" onClick={ () => setvalueInput(valueInput) } >Search</button>
       </div>
-   )
-}
+   );
+};
 
-export default SearchBox
+export default SearchBox;

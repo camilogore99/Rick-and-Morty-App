@@ -1,40 +1,38 @@
 import React, { useEffect, useState } from 'react'
+import { requests } from '../request/requests'
 import ResidentInfo from './ResidentInfo'
 
 const ResidentContainer = ( { url } ) => {
    
-   const [name, setName] = useState('')
-   const [urlImg, setUrlImg] = useState('')
-   const [status, setStatus] = useState('')
-   const [origin, setOrigin] = useState('')
-   const [episodes, setEpisodes] = useState('')
-
+   // Creamos los hooks de estados  // 
+   const [name, setName] = useState('');
+   const [urlImg, setUrlImg] = useState('');
+   const [status, setStatus] = useState('');
+   const [origin, setOrigin] = useState('');
+   const [episodes, setEpisodes] = useState('');
 
    useEffect(() => {
-
-      fetch( url )
-            .then( (res) => res.json() )
-            .then( (data) => {
-               setName(data.name)
-               setUrlImg(data.image)
-               setStatus(data.status)
-               setOrigin(data.origin.name)
-               setEpisodes(data.episode.length)
-            })
-
-   }, [url])
-
+      // oeticion que nos trae la informacion
+      requests( url ).then((data) => {
+         setName(data.name);
+         setUrlImg(data.image);
+         setStatus(data.status);
+         setOrigin(data.origin.name);
+         setEpisodes(data.episode.length);
+      });
+   }, [url]);
 
    return (
       <>
-         <ResidentInfo name={name}
+         <ResidentInfo 
+          name={name}
           urlImg={urlImg}
           status={status} 
           origin={origin} 
           episodes={episodes} 
-          />
+         />
       </>
-   )
-}
+   );
+};
 
 export default ResidentContainer;
